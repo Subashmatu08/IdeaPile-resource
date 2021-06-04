@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>test</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        height: 100vh;
+      }
+      nav {
+        background-color: white;
+        box-shadow: 1px 1px 10px rgb(204, 203, 203);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        min-height: 10vh;
+      }
+      nav > * {
+        margin: 1rem;
+      }
+      .nav-links ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        justify-content: center;
+        align-items: center !important;
+        margin: 0;
+        font-size: clamp(1rem, 1.4vw, 2rem);
+      }
+      .nav-links ul li {
+        list-style: none;
+      }
+      .nav-links ul li a {
+        color: black;
+        text-decoration: none;
+        position: relative;
+      }
+      .nav-links ul li a:hover {
+        color: green;
+      }
+      .hamburger-container {
+        display: none;
+      }
+      .times {
+        display: none;
+      }
+      .search {
+        display: none;
+      }
+      /* Remove when using */
+      .left-content {
+        margin: 20px;
+      }
+
+      @media screen and (max-width: 576px) {
+        nav {
+          min-width: fit-content;
+          display: flex;
+          justify-content: space-evenly;
+        }
+        nav > * {
+          margin: 0rem;
+        }
+        .nav-links ul {
+          gap: 20px;
+        }
+        .hamburger-container {
+          display: block;
+        }
+        .hamburger {
+          padding: 5px 10px;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+        }
+        .left {
+          height: 100vh;
+          position: absolute;
+          left: -100%;
+          top: 0;
+          background-color: white;
+          box-shadow: 10px 10px 40px rgb(214, 213, 213);
+          width: 75%;
+          transition: all 0.2s ease-in-out;
+        }
+        .left-content {
+          margin: 20px;
+        }
+        .show {
+          left: 0;
+        }
+        .times {
+          padding: 5px 10px;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 5px;
+        }
+        .search {
+          display: block;
+        }
+        .search-bar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <header>
+        <nav>
+          <div class="hamburger-container">
+            <button class="hamburger" onclick="leftMenuBar()">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <h3 class="title">Title</h3>
+          <div class="nav-links">
+            <ul>
+              <li>
+                <a href=""><i class="fas fa-home"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fas fa-bell"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fas fa-user-circle"></i></a>
+              </li>
+              <li>
+                <a href="" class="search"><i class="fas fa-search"></i></a>
+              </li>
+              <li class="search-bar">
+                <form class="d-flex">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="left" id="left">
+          <div class="left-content" id="left">
+            <button class="times" onclick="leftMenuBar()">
+              <i class="fas fa-times"></i>
+            </button>
+            <!-- Remove when use -->
+            <ul>
+              <li>skjfn</li>
+              <li>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Neque, at expedita atque
+                laudantium doloribus libero repellendus dicta iure sunt
+                perferendis.
+              </li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Lorem ipsum dolor sit amet.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="center"></div>
+        <div class="right"></div>
+      </main>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    function leftMenuBar() {
+      var element = document.getElementById("left");
+      element.classList.toggle("show");
+    }
+  </script>
+</html>
