@@ -1,1 +1,3 @@
-# IdeaPile-resource
+# IdeaPile-resources
+## Contents
+### NavBar
